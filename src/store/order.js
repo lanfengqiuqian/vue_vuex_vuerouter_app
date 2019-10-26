@@ -6,14 +6,8 @@ export default {
         test:"hello"
     },
     getters:{
-        helloHandler(){
-            console.log("hello")
-        }
     },
     mutations:{
-        testHandler(){
-            alert("this is a order demo")
-        }
     },
     actions:{}
 }

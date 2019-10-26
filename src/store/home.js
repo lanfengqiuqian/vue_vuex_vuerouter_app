@@ -6,7 +6,6 @@ export default {
     getters:{},
     mutations:{
         testHandler(){
-            alert("this is a home demo")
         }
     },
     actions:{}

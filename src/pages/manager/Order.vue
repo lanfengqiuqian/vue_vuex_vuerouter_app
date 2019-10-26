@@ -16,11 +16,10 @@ export default {
         ...mapGetters("order",[]),
     },
     methods:{
-        ...mapMutations("order",["testHandler"]),
+        ...mapMutations("order",[]),
         ...mapActions("order",[]),
     },
     created(){
-        this.testHandler();
     }
 }
 </script>

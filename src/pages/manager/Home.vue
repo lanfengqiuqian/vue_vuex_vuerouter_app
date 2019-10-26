@@ -16,11 +16,10 @@ export default {
         ...mapGetters("home",[]),
     },
     methods:{
-        ...mapMutations("home",["testHandler"]),
+        ...mapMutations("home",[]),
         ...mapActions("home",[]),
     },
     created(){
-        this.testHandler("this is a test");
     }
 }
 </script>

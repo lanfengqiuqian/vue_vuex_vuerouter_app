@@ -6,8 +6,5 @@ export default {
     getters:{},
     mutations:{},
     actions:{
-        async helloHandler(context){
-            alert("hello world")
-        }
     }
 }

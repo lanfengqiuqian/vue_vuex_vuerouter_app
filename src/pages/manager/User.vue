@@ -17,10 +17,9 @@ export default {
     },
     methods:{
         ...mapMutations("user",[]),
-        ...mapActions("user",["helloHandler"]),
+        ...mapActions("user",[]),
     },
     created(){
-        this.helloHandler();
     }
 }
 </script>
