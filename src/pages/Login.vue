@@ -37,6 +37,7 @@ export default {
         //提交表单事件
         submitHandler(){
             this.loginHandler(this.information);
+            this.$router.push({path:'/home'});
         }
     },
     created(){

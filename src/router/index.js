@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Manager from '../pages/manager/Layout.vue'
+import Login from '../pages/Login.vue'
 
 Vue.use(VueRouter)
 

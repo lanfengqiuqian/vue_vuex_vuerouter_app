@@ -29,10 +29,10 @@ export default {
         async loginHandler(context,info){
             let response = await axios.post("/user/login",info);
             if(response.status === 200){
-                Notify({ type: 'success', message: response.statusText});
+                Notify({ type: 'success', message:"登陆成功!"});
                 context.commit("refreshInfo",response.data);
             }else{
-                Notify({ type: 'danger', message:response.statusText });
+                Notify({ type: 'danger', message:"用户名或密码错误"});
             }
         }
     }
