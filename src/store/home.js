@@ -2,11 +2,20 @@ import {get,post,post_array} from '../http/axios'
 
 export default {
     namespaced:true,
-    state:{},
+    state:{
+        categories:[],
+    },
     getters:{},
     mutations:{
-        testHandler(){
-        }
+        refreshCategories(state,data){
+            state.categories = data;
+        },     
     },
-    actions:{}
+    actions:{
+        //查询所有分类信息
+        async findAllCategories(context){
+            let response = await get("/category/findAll");
+            context.commit("refreshCategories",response.data);
+        },
+    }
 }
