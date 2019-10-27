@@ -33,10 +33,15 @@ const routes = [
       }]
     }]
   },
+  //登陆
   {
     path: '/login',
     name: 'login',
     component: () => import('../pages/Login.vue')
+  },{
+    path:'/userAddress',
+    name:'userAddress',
+    component: () => import(/* webpackChunkName: "about" */ '../pages/UserAddress.vue')
   }
 ]
 
