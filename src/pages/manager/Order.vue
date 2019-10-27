@@ -1,6 +1,6 @@
 <template>
     <div class="order">
-        这是订单...
+        这是订单...helloworld
     </div>
 </template>
 <script>

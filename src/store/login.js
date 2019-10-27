@@ -17,11 +17,9 @@ export default {
     getters:{},
     mutations:{
         refreshInfo(state,info){
-            console.log(info)
             state.information.username = info.username;
             state.information.password = info.password;
             state.information.token = info.token;
-            console.log(state.information)
         },
     },
     actions:{
