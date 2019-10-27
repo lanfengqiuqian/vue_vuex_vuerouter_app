@@ -20,18 +20,31 @@
                     v-for="o in orders" :key="o.id"
                     num="1"
                     :price="o.total"
-                    :desc="o.remark"  
-                    title="商品标题"
+                    :desc="o.status"  
+                    title=""
                     thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
                     >
                         <div slot="tags">
-                            <van-tag plain type="danger"></van-tag>
+                            <van-tag plain type="danger">{{dateParse(o.orderTime)}}</van-tag>
                         </div>
                     </van-card>
                 </van-tab>
                 <van-tab title="未付款"></van-tab>
-                <van-tab title="未服务"> 3</van-tab>
-                <van-tab title="未评价"> 4</van-tab>
+                <van-tab title="未服务">
+                    <van-card
+                    v-for="o in orders.filter(item => item.status=='未服务')" :key="o.id"
+                    num="1"
+                    :price="o.total"
+                    :desc="o.status"  
+                    title=""
+                    thumb="https://img.yzcdn.cn/vant/t-thirt.jpg"
+                    >
+                        <div slot="tags">
+                            <van-tag plain type="danger">{{dateParse(o.orderTime)}}</van-tag>
+                        </div>
+                    </van-card>
+                </van-tab>
+                <van-tab title="未评价"></van-tab>
             </van-tabs>
        </div>
     </div>
@@ -69,7 +82,7 @@ export default {
     },
     created(){
         this.findAllOrders();
-        console.log(this.dateParse(1568961628188))
+        // console.log(this.dateParse(1568961628188))
     }
 }
 </script>
