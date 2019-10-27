@@ -29,7 +29,14 @@
             <van-cell title="性别" icon="star-o" :value="myInfo.gender" />
         </van-row>
         <van-row>
-            <van-cell title="地址" icon="location-o" :value="myInfo.address" />
+            <van-cell title="地址" icon="location-o" :value="myInfo.address">
+            <van-icon
+                @click="toAddress"
+                slot="right-icon"
+                name="edit"
+                style="line-height: inherit;"
+            />
+            </van-cell>
         </van-row>
         <van-row>
             <van-button plain type="danger" size="large" @click="logout">退出登陆</van-button>
@@ -104,6 +111,10 @@ export default {
             //调出模态框
             this.show = true;
         },
+        //到达地址路由
+        toAddress(){
+            this.$router.push({path:'/more/address'})
+        }
     },
     created(){
         //根据令牌获取基本信息

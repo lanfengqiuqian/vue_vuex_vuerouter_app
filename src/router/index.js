@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Manager from '../pages/manager/Layout.vue'
-import Login from '../pages/Login.vue'
+import More from '../pages/manager/more/Layout.vue'
 
 Vue.use(VueRouter)
 
@@ -20,15 +20,23 @@ const routes = [
     },{
       path:"user",
       component:() => import('../pages/manager/User.vue')
+    },{
+      //more是用来放用户的一些信息的
+      path:"more",
+      component:More,
+      children:[{
+        path:"address",
+      component:() => import('../pages/manager/more/Address.vue'),        
+      },{
+        path:"customer",
+        component:() => import('../pages/manager/more/Customer.vue'),        
+      }]
     }]
   },
   {
     path: '/login',
     name: 'login',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../pages/Login.vue')
+    component: () => import('../pages/Login.vue')
   }
 ]
 
